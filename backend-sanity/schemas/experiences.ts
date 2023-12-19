@@ -9,10 +9,27 @@ export default{
             type:'string'
         },
         {
-            name:'works',
-            title:'Works',
-            type:'array',
-            of:[{ type:'workExperience'}]
+            name: 'title',
+            title: 'Title',
+            type: 'string',
         },
+        {
+            name: 'description',
+            title: 'Description',
+            type: 'string',
+        },
+        {
+            name: 'location',
+            title: 'Location',
+            type: 'string',
+        },
+        {
+            name:'icon',
+            title:'Icon',
+            type: 'string',
+            options: {
+              hotspot: true,
+            },
+        }
     ]
 }
