@@ -20,7 +20,7 @@ const About = () => {
     <>
       <div className='app__about-me about__heading'>
         <div className='app__about-me-el'>
-          <h2 className='head-text'>
+          <h2 className='head-text about-head'>
             About <span>Me</span>
           </h2>
         </div>

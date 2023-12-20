@@ -1,39 +1,46 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
 import { client } from '../../client';
+import emailjs from '@emailjs/browser';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import './Footer.scss';
 
 const Footer = () => {
-  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
 
-  const { username, email, message } = formData;
 
-  const handleChangeInput = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    const name = form.current.user_name.value.trim();
+    const email = form.current.user_email.value.trim();
+    const message = form.current.message.value.trim();
+
+    if (!name || !email || !message) {
+      // Display an alert or toast message indicating that fields are required
+      toast.error('Please fill out all required fields');
+      return;
+    }
+
+
+    emailjs.sendForm(
+      "service_x3jjisy",
+      "template_vc0974f",
+      form.current,
+      "lwD4oLkW3klbCHqw8"
+    )
+      .then((result) => {
+        toast.success('Message sent successfully');
+      }, (error) => {
+        toast.error('Message not sent');
+      });
   };
 
-  const handleSubmit = () => {
-    setLoading(true);
 
-    const contact = {
-      _type: 'contact',
-      name: formData.username,
-      email: formData.email,
-      message: formData.message,
-    };
-
-    client.create(contact)
-      .then(() => {
-        setLoading(false);
-        setIsFormSubmitted(true);
-      })
-      .catch((err) => console.log(err));
-  };
 
   return (
     <>
@@ -49,32 +56,33 @@ const Footer = () => {
           <a href="tel:+917979759471" className="p-text">+917979759471</a>
         </div>
       </div>
-      {!isFormSubmitted ? (
-        <div className="app__footer-form app__flex">
+
+
+      <div className="app__footer-form app__flex">
+
+        <form ref={form} onSubmit={sendEmail}>
+
           <div className="app__flex">
-            <input className="p-text" type="text" placeholder="Your Name" name="username" value={username} onChange={handleChangeInput} />
+            <input className="p-text" type="text" placeholder="Your Name" name="user_name" />
           </div>
           <div className="app__flex">
-            <input className="p-text" type="email" placeholder="Your Email" name="email" value={email} onChange={handleChangeInput} />
+            <input className="p-text" type="email" placeholder="Your Email" name="user_email" />
           </div>
           <div>
             <textarea
               className="p-text"
               placeholder="Your Message"
-              value={message}
               name="message"
-              onChange={handleChangeInput}
+
             />
+
           </div>
-          <button type="button" className="p-text" onClick={handleSubmit}>{!loading ? 'Send Message' : 'Sending...'}</button>
-        </div>
-      ) : (
-        <div>
-          <h3 className="head-text">
-            Thank you for getting in touch!
-          </h3>
-        </div>
-      )}
+          <input className='button' type="submit" value="Send" ></input>
+        </form>
+      </div>
+
+      <ToastContainer />
+
     </>
   );
 };

@@ -28,7 +28,7 @@
         padding-top: 8rem;
     }
 
-    @media screen and (max-width: 1500px) {
+    @media screen and (max-width: 1400px) {
         flex-direction: column;
     }
 
@@ -45,13 +45,15 @@
     align-items: flex-start;
     height: 100%;
 
-    margin: 0 2rem;
+    margin: 0rem;
 
     @media screen and (max-width: 1200px) {
         width: 100%;
         margin-right: 0rem;
     }
 }
+
+
 
 .app__header-badge {
     width: 100%;
@@ -62,7 +64,7 @@
 
     .badge-cmp,
     .tag-cmp {
-        padding: 1rem 2rem;
+        padding: 1rem;
         background: var(--white-color);
         border-radius: 15px;
         flex-direction: row;
@@ -73,15 +75,29 @@
 
     .tag-cmp {
         flex-direction: column;
-        margin: 3rem;
+        margin: 2rem;
+        margin-left: 4rem;
+        padding: 1rem 2rem;
+        @media screen and (max-width: 750px) {
+            padding: 0.75rem;
+            margin: 1rem;
+            margin-left: 2rem;
+            
+        }
 
         p {
             width: 100%;
             text-align: left;
+            font-weight: 700;
+            font-size: 1.25rem;
+
+           span{
+                color: var(--secondary-color);
+           }
         }
     }
 
-    span {
+    .wave {
         font-size: 2.5rem;
 
         @media screen and (min-width: 2000px) {
@@ -89,12 +105,53 @@
         }
     }
 
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1400px) {
+        justify-content: center;
+        align-items: center;
+    }
+
+    @media screen and (max-width: 1000px) {
         justify-content: flex-start;
         align-items: flex-start;
     }
 }
 
+.app__header-resume{
+    padding: 0.5rem 1rem;
+    border-radius: 0.5rem;
+    background-color: #000;
+    color: #fff;
+    font-weight: 800;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    align-self: center;
+
+    a{
+        color: #fff;
+        text-decoration: none;
+
+        h1{
+            font-size: 1.25rem;
+            font-weight: 800;
+            
+        }
+    
+    }
+
+    @media screen and (min-width: 500px){
+        &:hover{
+            background-color: #fff;
+            border: 2px solid black;
+    
+            a{
+                color: #000;
+            }
+        }
+        
+    }
+
+    
+}
 
 .app__header-circles {
     flex: 0.75;
@@ -222,4 +279,12 @@
     @media screen and (max-width: 1200px) {
         margin: 2rem 0;
     }
+}
+
+.views{
+    position: absolute;
+    z-index: 2;
+    top: 82px;
+    right: 40px;
+   
 }

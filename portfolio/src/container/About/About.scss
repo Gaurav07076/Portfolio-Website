@@ -7,6 +7,7 @@
 }
 
 .app__about-me{
+    
     background-color: var(--primary-color);
     display: flex;
     flex-direction: column;
@@ -24,14 +25,18 @@
     
 }
 
-.about__heading{
-    padding: 0.5rem 0;
-    margin: 0 0.75rem;
 
+
+.about__heading{
+    margin: 0 0.75rem;
+}
+
+.about-head{
+    padding: 1rem 0 0 0;
 }
 
 .about__text{
-    margin: 1.5rem 3rem;
+    margin: 1rem 3rem 1.5rem 3rem;
 
     @media screen and (max-width: 500px) {
         margin: 1.5rem 2rem;
