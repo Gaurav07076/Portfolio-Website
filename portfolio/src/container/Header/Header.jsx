@@ -19,7 +19,7 @@ const scaleVariants = {
 
 const Header = () => {
   const [text] = useTypewriter({
-    words: [' Web Developer!', 'n ML Enthusiast!', ' Problem Solver!', ' React-Developer!'],
+    words: [' Web Developer!', 'n ML Enthusiast!', ' React-Developer!', ' Problem Solver!'],
     loop: {},
     cursorStyle: '.',
     typeSpeed: 100,
@@ -29,8 +29,10 @@ const Header = () => {
   return (
     
     <div className="app__header app__flex">
-      
-      {/* <div className='views'>Page Visits</div> */}
+       <div className='views'>Page Visits
+       
+       </div>
+     
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
