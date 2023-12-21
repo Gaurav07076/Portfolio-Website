@@ -1,27 +1,54 @@
-import React from 'react';
-import { BsTwitter, BsInstagram, BsGithub } from 'react-icons/bs';
-import { FaFacebookF } from 'react-icons/fa';
+import React, {useState} from 'react';
+import { BsInstagram, BsGithub } from 'react-icons/bs';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedin, faLeetcode } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { Leetcode } from "@coreui/icons-react";
 
-const SocialMedia = () => (
-  <div className="app__social">
-    <div>
-      <a href='https://github.com/gaurav07076' target='-blank'>
-        <BsGithub />
-      </a>
-    </div>
-    <a href='https://www.linkedin.com/in/gaurav-verma-98688a232/' target='-blank'>
+import { faCode } from '@fortawesome/free-solid-svg-icons';
+
+
+const SocialMedia = () => {
+  const [iconColor, setIconColor] = useState('#6b7688');
+
+  const handleHover = () => {
+    setIconColor('#fff');
+  };
+
+  const handleLeave = () => {
+    setIconColor('#6b7688');
+  };
+
+  return (
+    <div className="app__social">
       <div>
-        <FontAwesomeIcon icon={faLinkedin} />
+        <a href='https://github.com/gaurav07076' target='_blank'>
+          <BsGithub />
+        </a>
       </div>
-    </a>
-    <div>
-      <a href='https://www.instagram.com/vgaurav_21/?igshid=OGQ5ZDc2ODk2ZA%3D%3D' target='-blank'>
-        <BsInstagram />
-      </a>
+
+      <div>
+        <a href='https://www.linkedin.com/in/gaurav-verma-98688a232/' target='_blank'>
+          <FontAwesomeIcon icon={faLinkedin} />
+        </a>
+      </div>
+
+      <div onMouseEnter={handleHover} onMouseLeave={handleLeave}>
+        <a href='https://leetcode.com/Gaurav_Verma08/' target='_blank'>
+          <FontAwesomeIcon
+            icon={faCode}
+            size="2x"
+            style={{ color: iconColor }}
+          />
+        </a>
+      </div>
+
+      <div>
+        <a href='https://www.instagram.com/vgaurav_21/?igshid=OGQ5ZDc2ODk2ZA%3D%3D' target='_blank'>
+          <BsInstagram />
+        </a>
+      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default SocialMedia;

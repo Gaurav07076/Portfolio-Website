@@ -1,0 +1,32 @@
+.app__achievement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__achievement-head{
+    margin: 1rem;
+}
+
+.app__achievement-item{
+    border-radius: 15px;
+    border: 1.25px solid var(--black-color);
+    box-shadow:8px 5px 5px rgba(0, 0, 0, 0.3);;
+    background-color: #fff;
+    width: 80%;
+    margin: 0.5rem;
+    padding: 0.75rem 1rem;
+
+    @media screen and (min-width: 1000px){
+        width: 70%;
+        padding: 1.25rem 1.5rem;
+        border-radius: 0.85rem;
+    }
+
+    @media screen and (max-width: 500px){
+        width: 100%;
+        padding: 0.5rem 0.5rem;
+        border-radius: 0.85rem;
+    }
+}

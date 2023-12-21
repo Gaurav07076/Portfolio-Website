@@ -1,17 +1,17 @@
-import React, { useState, useRef } from 'react';
-
+import React, { useRef, useState } from 'react';
 import { images } from '../../constants';
 import { AppWrap, MotionWrap } from '../../wrapper';
-import { client } from '../../client';
 import emailjs from '@emailjs/browser';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import './Footer.scss';
 
+
 const Footer = () => {
-
-
   const form = useRef();
+  const [formKey, setFormKey] = useState(0);
+
+
 
   const sendEmail = (e) => {
     e.preventDefault();
@@ -21,11 +21,9 @@ const Footer = () => {
     const message = form.current.message.value.trim();
 
     if (!name || !email || !message) {
-      // Display an alert or toast message indicating that fields are required
       toast.error('Please fill out all required fields');
       return;
     }
-
 
     emailjs.sendForm(
       "service_x3jjisy",
@@ -33,11 +31,25 @@ const Footer = () => {
       form.current,
       "lwD4oLkW3klbCHqw8"
     )
-      .then((result) => {
+      .then(() => {
         toast.success('Message sent successfully');
-      }, (error) => {
+        // Reset the form and trigger a re-render by updating formKey
+        form.current.reset();
+        setFormKey((prevKey) => prevKey + 1);
+      })
+      .catch(() => {
         toast.error('Message not sent');
       });
+  };
+
+  const [iconColor, setIconColor] = useState('#6b7688');
+
+  const handleHover = () => {
+    setIconColor('#fff');
+  };
+
+  const handleLeave = () => {
+    setIconColor('#6b7688');
   };
 
 
@@ -80,6 +92,8 @@ const Footer = () => {
           <input className='button' type="submit" value="Send" ></input>
         </form>
       </div>
+
+      {/*  */}
 
       <ToastContainer />
 

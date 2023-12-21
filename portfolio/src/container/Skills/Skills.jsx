@@ -34,7 +34,7 @@ const Skills = () => {
 
     client.fetch(query).then((data) => {
       setExperiences(data);
-      console.log(experiences)
+      
     });
 
     client.fetch(skillsQuery).then((data) => {
@@ -75,7 +75,7 @@ const Skills = () => {
         </motion.div>
         <div className="app__skills-exp">
           <VerticalTimeline lineColor="#000">
-            {console.log(experiences)}
+            
             {experiences.map((item, index) => (
               <React.Fragment key={index}>
                 <VerticalTimelineElement

@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Typewriter, useTypewriter, Cursor } from 'react-simple-typewriter'
+import {  useTypewriter, Cursor } from 'react-simple-typewriter'
 
 import { images } from '../../constants';
 import './Header.scss';
@@ -29,10 +29,7 @@ const Header = () => {
   return (
     
     <div className="app__header app__flex">
-       <div className='views'>Page Visits
-       
-       </div>
-     
+      
       <motion.div
         whileInView={{ x: [-100, 0], opacity: [0, 1] }}
         transition={{ duration: 0.5 }}
