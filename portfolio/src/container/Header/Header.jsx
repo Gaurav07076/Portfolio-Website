@@ -50,7 +50,7 @@ const Header = () => {
 
           </div>
           <div className='app__header-resume app__flex'>
-            <a href='https://drive.google.com/file/d/1pW-1RoMllw1T5QUP66J88nZe7qeNcQSZ/view?usp=drive_link' target='_blank' rel='noreferrer'>
+            <a href='https://drive.google.com/file/d/1BXBDnx_8330LDJVuCjA2CseX8cfjQ0TN/view?usp=drive_link' target='_blank' rel='noreferrer'>
               <h1>Download CV</h1>
             </a>
           </div>
