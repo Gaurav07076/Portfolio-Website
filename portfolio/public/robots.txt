@@ -1,3 +1,8 @@
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:
+Hi, I’m Gaurav Verma, someone who is always fascinated about technology and loves to know the insides of it. A 
+I’m passionate about developing innovative and impactful solutions using cutting-edge technologies. I have experience in problem solving, web development, machine learning.
+
+During my academic journey, I've had the privilege of exploring diverse technologies and honing my skills. I've excelled in languages like C++, Java, and Web Development tools such as HTML, CSS, and JavaScript. My proficiency extends to popular frameworks like ReactJS and NodeJS, and I've delved into the intricacies of Flask for Web Dev and ML.
+
+In the professional realm, I had the opportunity to intern at IBM on AICTE, focusing on Machine Learning. My project involved developing a mental fitness tracker using technologies like Jupyter Notebook and Python, demonstrating my commitment to leveraging AI for societal well-being. Additionally, I contributed to Let's Grow More in Frontend Development, crafting dynamic Todo List and Calculator apps with JavaScript and NodeJS.
+
+I’m always eager to learn new skills and technologies, and collaborate with other developers and enthusiasts. You can contact me via email, phone, or LinkedIn, and check out my GitHub and LeetCode profiles for more of my work. Thank you for visiting my portfolio website! 😊

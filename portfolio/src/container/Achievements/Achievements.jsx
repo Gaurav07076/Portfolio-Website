@@ -14,7 +14,6 @@ const Achievements = () => {
 
         client.fetch(query).then((data) => {
             setAchievements(data);
-            console.log(data)
 
         });
     }, []);
